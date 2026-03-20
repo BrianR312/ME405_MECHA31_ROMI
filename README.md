@@ -1,2 +1,153 @@
 # ME405_MECHA31_ROMI
-Documentation and repository for ME405 MECHA31 ROMI project 
+
+## Overview and Competition Description
+
+This project implements an autonomous robot, named ROMI, optimized to complete a competition racetrack in as little time as possible. For navigation, our ROMI was equipped with a line follower to track its position relative to a fixed line on the racetrack, a state observer to estimate its position and orientation, and a set of bump sensors for tactile feedback when making contact with obstacles. The software and hardware implementation of these features will be discussed within the following sections. 
+
+The rules of the competition were kept relatively simple with the provided racetrack being split into 4 checkpoints and a finish position. These can be seen below in Figure 1. The first portion of the track was a straight line that required line-following up until checkpoint #1. Between checkpoint #1 and #2 was the "garage" section with a steel enclosure simulating a parking garage environment. There was no black line to follow for this section meaning all navigation had to be done without the line following feature. The only requirement for this section was that an element of sensing - either tactile with a bump sensor or with IR/ultrasonic proximity sensors - was used to detect the wall before responding. This meant that teams could not rely on their state observer for all of section 2. The section between checkpoints #2 and #3 was referred to as the "slalom" section and required line following to pass through obstacles. The next segment of the track was a simple turn into checkpoint #4, followed by a turn into the finish position. To count a checkpoint as "complete", ROMI had to completeley cover the checkpoint dot with its chassis. 
+
+![Figure 1. Competition racetrack and checkpoints](images/ME405_Racetrack.jpg)
+
+The goal of this project was to design, build, and validate a complete electromechanical system integrating sensing, control, and actuation.
+
+---
+
+## Demo Video
+
+[Watch the robot in action](PASTE_VIDEO_LINK_HERE)
+
+---
+
+## System Architecture
+
+The robot consists of three main subsystems:
+
+* **Sensing:** Reflectance sensor array detects line position
+* **Control:** Feedback controller computes motor commands
+* **Actuation:** Motors drive the robot based on control input
+
+![Block Diagram](docs/block_diagram.png)
+
+---
+
+## Hardware Design
+
+### Components
+
+* Reflectance sensor array (QTR)
+* DC motors with encoders
+* Motor driver
+* Microcontroller (e.g., STM32 / Pyboard)
+
+### Mechanical Design
+
+Custom mounts were used to position the sensors and motors appropriately.
+
+### Wiring Diagram
+
+![Wiring Diagram](hardware/wiring.png)
+
+---
+
+## 💻 Software Design
+
+The software is modular and organized into the following components:
+
+* `encoder.py` – Reads and processes encoder signals
+* `motor_driver.py` – Controls motor speed and direction
+* `controller.py` – Implements feedback control logic
+* `main.py` – Coordinates overall system behavior
+
+The system operates using a structured control loop that continuously:
+
+1. Reads sensor input
+2. Computes error
+3. Updates control output
+4. Commands motors
+
+---
+
+## 🧮 Control System
+
+A feedback controller was implemented to minimize the error between the robot’s position and the line.
+
+* **Error Definition:** Difference between desired line position and measured position
+* **Control Method:** (e.g., PID / proportional / other)
+
+Control equation:
+
+```
+u(t) = Kp * e(t) + Ki * ∫e(t)dt + Kd * de(t)/dt
+```
+
+Controller gains were tuned experimentally to achieve stable and responsive performance.
+
+---
+
+## 📊 Results
+
+The robot successfully followed the line under normal operating conditions.
+
+**Performance observations:**
+
+* Stable tracking with minimal oscillation
+* Responsive to changes in line curvature
+* Maximum speed: (add value)
+
+(Optional: include plots if available)
+![Performance Plot](docs/results.png)
+
+---
+
+## ⚠️ Challenges
+
+Some challenges encountered during development included:
+
+* Sensor noise and inconsistent readings
+* Tuning control gains for stability
+* Mechanical alignment of sensors
+
+These issues were addressed through filtering, iterative tuning, and hardware adjustments.
+
+---
+
+## 🔁 Future Improvements
+
+* Implement more advanced control (e.g., adaptive or state-based control)
+* Improve sensor calibration
+* Increase speed while maintaining stability
+* Enhance mechanical robustness
+
+---
+
+## 📂 Repository Structure
+
+```
+.
+├── src/        # Python source code
+├── hardware/   # Wiring diagrams and CAD files
+├── images/     # Photos of the robot
+├── docs/       # Diagrams and additional documentation
+├── main.py     # Main execution file
+└── README.md   # Project documentation
+```
+
+---
+
+## 📸 Project Photos
+
+![Robot](images/robot.jpg)
+![Setup](images/setup.jpg)
+
+---
+
+## 👥 Contributors
+
+* Your Name
+* Teammate Name
+
+---
+
+## 📎 Additional Notes
+
+This project demonstrates the integration of sensing, control systems, and embedded programming to achieve autonomous behavior in a robotic platform.
