@@ -7,6 +7,7 @@ This project implements an autonomous robot, named ROMI, optimized to complete a
 The rules of the competition were kept relatively simple with the provided racetrack being split into 4 checkpoints and a finish position. These can be seen below in Figure 1. The first portion of the track was a straight line that required line-following up until checkpoint #1. Between checkpoint #1 and #2 was the "garage" section with a steel enclosure simulating a parking garage environment. There was no black line to follow for this section meaning all navigation had to be done without the line following feature. The only requirement for this section was that an element of sensing - either tactile with a bump sensor or with IR/ultrasonic proximity sensors - was used to detect the wall before responding. This meant that teams could not rely on their state observer for all of section 2. The section between checkpoints #2 and #3 was referred to as the "slalom" section and required line following to pass through obstacles. The next segment of the track was a simple turn into checkpoint #4, followed by a turn into the finish position. To count a checkpoint as "complete", ROMI had to completeley cover the checkpoint dot with its chassis. 
 
 ![Figure 1. Competition racetrack and checkpoints](images/ME405_Racetrack.png)
+Figure 1. Competition racetrack and checkpoints
 
 The goal of this project was to design, build, and validate a complete electromechanical system integrating sensing, control, and actuation.
 
