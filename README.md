@@ -135,6 +135,18 @@ Both the line follower and observer tasks are structured in the same way, with o
 
 ## Motor Tuning and Parameterization
 
+<p align="center">
+  <img src="images/02_22_14_39_20_sp80_kp50.0.png" width="400">
+</p>
+
+<p align="center">
+  <img src="images/02_22_14_39_25_sp80_kp500.0.png" width="400">
+</p>
+
+<p align="center">
+  <img src="images/02_22_14_39_30_sp80_kp2000.0.png" width="400">
+</p>
+
 ## Unique Features
 
 ## Challenges
