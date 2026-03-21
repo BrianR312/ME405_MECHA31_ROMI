@@ -43,14 +43,29 @@ This section will discuss our choice of components, mounting system, and wiring.
 
 ### Components
 
+Shoe of Brian and NUCLEO board
+
+    The Shoe of Brian is a custom IO shield that was designed by Professor Ridgeley and attaches to our STM32 NUCLEO board. This board comes equipped with an STM32 microcontroller. 
+
 QTR-MD-05A Reflectance Sensor Array
-    For our line follower
+
+    For our line follower, a Polulu analog 5 sensor array was used. This sensor package uses IR LED/phototransistor pairs to illuminate the ground and detect reflectance. Originally, we used a QTR-HD-05A sensor array where the HD stands for high density. With only 5 sensors, we quickly found the high density package to be too narrow in focus for the track's line width. By changing to a medium density (MD) sensor with the same number of IR emitters, we were able to keep the same wiring and pin configurations while expanding our maximum sensable width by over 75%. This came at the expense of some fidelity between sensors, but this had a negligible effect on our line following.
+
+TI DRV8838 Motor Drivers and Encoders
+
+    Our ROMI chassis came equipped with two TI DRV8838 motor drivers. At no-load conditions, these motor drivers had a speed of 150 RPM at a nominal voltage of 4.5V. They also had a gear ratio of 120:1.
+
+    For reading displacement, these motor drivers also came with magnetic quadrature encoders that could read 12 counts per revolution. This resolution is extremely low, but with the gear ratio the true resolution is 1440 counts per revolution. For our use case, this resolution is adequate. 
+
+Polulu Bump Sensor
+
+BNO055 IMU
+
+
+
 
 
 * Reflectance sensor array (QTR)
-* DC motors with encoders
-* Motor driver
-* Microcontroller (e.g., STM32 / Pyboard)
 
 ### Mechanical Design and Mounting
 
