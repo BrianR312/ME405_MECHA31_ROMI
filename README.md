@@ -46,7 +46,8 @@ Custom mounts were used to position the sensors and motors appropriately.
 
 ### Wiring Diagram
 
-![Wiring Diagram](hardware/wiring.png)
+![Wiring Diagram]<img width="708" height="821" alt="WiringDiagram" src="https://github.com/user-attachments/assets/cd71af1f-a435-4da4-8e7c-d9a3cbc8e63c" />
+
 
 ---
 
