@@ -21,6 +21,7 @@ The goal of this project was to design, build, and validate a complete electrome
 ### Components
 
 * Reflectance sensor array (QTR)
+* BNO055 IMU
 * DC motors with encoders
 * Motor driver
 * Microcontroller (e.g., STM32 / Pyboard)
@@ -31,8 +32,9 @@ Custom mounts were used to position the sensors and motors appropriately.
 
 ### Wiring Diagram
 
-<img width="708" height="821" alt="WiringDiagram" src="https://github.com/user-attachments/assets/cd71af1f-a435-4da4-8e7c-d9a3cbc8e63c" />
+The wiring that is consistent with our code is shown below, with red wires always representing power and black wires always representing ground. Each board shown is a picture of the exact same board that we used in our project, and the wiring is the exact same as what was used in our project, down to the wire colors!
 
+<img width="708" height="821" alt="WiringDiagram" src="https://github.com/user-attachments/assets/cd71af1f-a435-4da4-8e7c-d9a3cbc8e63c" />
 
 ---
 
@@ -51,13 +53,13 @@ The software is modular and organized into the following components:
 
 ### Task Diagram
 
-Using this modular task structure we have seven tasks that communicate with each other using the shares and queues system. We use a task diagram to organize the scheduling and inter task communication between the tasks to ensure proper multitasking.
+Using this modular task structure we have seven tasks that communicate with each other using the shares and queues system. We use a task diagram to organize the scheduling and inter task communication between the tasks to ensure proper multitasking. 
 
 <img width="3604" height="3043" alt="Task Diagram (2)" src="https://github.com/user-attachments/assets/1dbd5106-60fb-4034-a85f-20ebcdd3cbee" />
 
 ### Task Structure
 
-Our tasks are structured as generator functions so that they can keep internal state in between being called, which allows us to maintain proper multitasking. To plan out the structure of each task, we use finite state machines, one for each task. The diagrams show bubbles as states, with arrows as transitions labelled with the transition criteria and any variable changes as a result of the transition.
+Our tasks are structured as generator functions so that they can keep internal state in between being called, which allows us to maintain proper multitasking. To plan out the structure of each task, we use finite state machines, one for each task. The diagrams show bubbles as states, with arrows as transitions labelled with the transition criteria and any variable changes as a result of the transition. Lastly, both the switch and debounce tasks are entirely based on interrupts and not structured as finite state machines in code, so they do not have corresponding diagrams that are shown below.
 
 #### Motor Task
 The motor tasks are identical, thus they are shown using the same finite state machine. The motor task includes eight states: Init, Wait, Run, Fllw, Estm, Turn, Turn Place, Straight. Init initializes the motors and moves to Wait where the task waits for the user to input a command. By choosing 'L' or 'R' the user activates a step response in the left or right motor respectively. By choosing 'F' the user activates the line following state, where Romi will follow a line indefinitely. By choosing 'E' Romi is set up to run exactly 1000 mm in a straight line controlled by the state estimator. Lastly, Turn, Turn Place and Straight are all results of the go command 'G' which starts Romi on the time trial track. The user interface task, 'task_user.py', controls the switching between the three aforementioned states based on the section of track.
@@ -70,6 +72,9 @@ The user task handles the user input and also recieves input from the state esti
 <img width="3548" height="2443" alt="User Task FSM" src="https://github.com/user-attachments/assets/2d46f2d4-3e10-418c-9f2e-e34d81a6d3ed" />
 
 #### Line Follower and Observer Tasks
+Both the line follower and observer tasks are structured in the same way, with only an initialization state and an idle state. The line follower runs every time it is called because the motor task only reads the values recieved by the line follower if a line following related command is called. Towards the end of the term we considered that the line follower always running may be eating time and causing tasks to run out of schedule, so we made it so that the line follow task passes if the followFlag is not high. Furthermore, the observer task needs to run always in order to maintain proper state estimation, so it is constantly taking readings.
+
+<img width="1148" height="416" alt="image" src="https://github.com/user-attachments/assets/ae932a77-c1dd-43b9-9c30-ad86a2a86125" />
 
 ---
 
