@@ -170,15 +170,13 @@ The biggest challenge we faced throughout this project was our line follower fun
 Given more time for this project, we would make two changes to improve our line following capability. The first, and easiest, would be to upgrade to a sensor array with more sensors. This would give us a wider field of view that would help compensate for our line follower task's update speed. The second change would be updating our software architecture. Currently, we have a task for each sensing function - crash detection with the bump sensor, line following, state observation, etc. Each of these tasks runs for every iteration of the scheduler, even when not needed. We could combine less important sensing tasks, thus reducing the number of tasks that need to run. Doing so would allow us to reduce the periods on all of our tasks, including our line follower task. This would imporve line detection and enable us to run our ROMI at faster speeds when line following.
 
 ## Repository Structure
-
----
-
-├── source_code/        # Python source code
-├── demo_vids/          # Videos of our trial runs and other tests
-├── images/             # Photos of ROMI and the racetrack
-└── README.md           # Project documentation
-
----
+```
+your-project/
+├── source_code/    # Python source code
+├── demo_vids/      # Videos of our trial runs and tests
+├── images/         # Photos of the robot and racetrack
+└── README.md       # Project documentation
+```
 
 ## Additional Notes
 
