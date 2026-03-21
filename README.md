@@ -51,6 +51,10 @@ Main: The main file that initializes all the objects, shares, queues, and tasks
 
 The system operates using a structured control loop that continuously:
 
+
+I AM ADDING THIS WE NEED TO DELETE IT
+
+
 1. Reads sensor input
 2. Computes error
 3. Updates control output
