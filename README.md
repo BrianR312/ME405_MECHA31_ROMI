@@ -58,7 +58,11 @@ The Shoe of Brian is a custom I/O shield designed by Professor Ridgely that inte
 
 For our line follower, a Polulu analog 5 sensor array was used. This sensor package uses IR LED/phototransistor pairs to illuminate the ground and detect reflectance. Originally, we used a QTR-HD-05A sensor array where the HD stands for high density. With only 5 sensors, we quickly found the high density package to be too narrow in focus for the track's line width. By changing to a medium density (MD) sensor with the same number of IR emitters, we were able to keep the same wiring and pin configurations while expanding our maximum sensable width by over 75%. This came at the expense of some fidelity between sensors, but this had a negligible effect on our line following.
 
-![Line Follower and Bump Sensors](images/Line_and_bump_sensors.jpeg)
+Our line follower can be seen centered on the front of our robot. Our bump sensors, discussed later, can also be seen on each side in red.
+
+<p align="center">
+  <img src="images/Line_and_bump_sensors.jpeg" width="400">
+</p>
 
 #### TI DRV8838 Motor Drivers and Encoders:
 
@@ -76,9 +80,11 @@ The BNO055 is a 9 degree of freedom IMU that combines an accelerometer, gyroscop
 
 ### Mechanical Design and Mounting
 
-All components were mounted using the provided M2 screws and matching hex nuts. For our IMU, two standoffs were used to ensure the IMU was parallel to the ground. We used another two standoffs for our refelctance line sensor. This enabled it to get closer to the ground for more precise readings. All standoffs were mounted using M2 screws. An image of our IMU mounting can be seen below.
+All components were mounted using the provided M2 screws and matching hex nuts. For our IMU, two standoffs were used to ensure the IMU was parallel to the ground. We used another two standoffs for our refelctance line sensor. This enabled it to get closer to the ground for more precise readings. All standoffs were mounted using M2 screws. An image of our IMU mounted on its standoffs can be seen below. Two standoffs were leter removed for use on our line follower.
 
-![IMU Mounting](images/IMU.jpeg)
+<p align="center">
+  <img src="images/IMU.jpeg" width="400">
+</p>
 
 ### Wiring Diagram
 
