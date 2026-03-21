@@ -49,16 +49,15 @@ The software is modular and organized into the following components:
 * **Main:** The main file that initializes all the objects, shares, queues, and tasks
   - **Ex:** 'main.py'
 
-The system operates using a structured control loop that continuously:
+### Task Diagram
 
+Using this modular task structure we have seven tasks that communicate with each other using the shares and queues system. We use a task diagram to organize the scheduling and inter task communication between the tasks to ensure proper multitasking.
 
-I AM ADDING THIS WE NEED TO DELETE IT
+<img width="3604" height="3043" alt="Task Diagram (1)" src="https://github.com/user-attachments/assets/103c3f2c-719c-45ee-99ee-ffc8bb9d81a6" />
 
+### Task Structure
 
-1. Reads sensor input
-2. Computes error
-3. Updates control output
-4. Commands motors
+Our tasks are structured as generator functions that en
 
 ---
 
