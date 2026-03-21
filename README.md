@@ -58,7 +58,7 @@ The Shoe of Brian is a custom I/O shield designed by Professor Ridgely that inte
 
 For our line follower, a Polulu analog 5 sensor array was used. This sensor package uses IR LED/phototransistor pairs to illuminate the ground and detect reflectance. Originally, we used a QTR-HD-05A sensor array where the HD stands for high density. With only 5 sensors, we quickly found the high density package to be too narrow in focus for the track's line width. By changing to a medium density (MD) sensor with the same number of IR emitters, we were able to keep the same wiring and pin configurations while expanding our maximum sensable width by over 75%. This came at the expense of some fidelity between sensors, but this had a negligible effect on our line following.
 
-Our line follower can be seen centered on the front of our robot. Our bump sensors, discussed later, can also be seen on each side in red.
+Our wider, medium density, line follower can be seen centered on the front of our robot. Our bump sensors, discussed later, can also be seen on each side in red.
 
 <p align="center">
   <img src="images/Line_and_bump_sensors.jpeg" width="400">
@@ -132,41 +132,12 @@ Both the line follower and observer tasks are structured in the same way, with o
 
 <img width="1148" height="416" alt="image" src="https://github.com/user-attachments/assets/ae932a77-c1dd-43b9-9c30-ad86a2a86125" />
 
----
 
-## Control System
+## Motor Tuning and Parameterization
 
-A feedback controller was implemented to minimize the error between the robot’s position and the line.
+## Unique Features
 
-* **Error Definition:** Difference between desired line position and measured position
-* **Control Method:** (e.g., PID / proportional / other)
-
-Control equation:
-
-```
-u(t) = Kp * e(t) + Ki * ∫e(t)dt + Kd * de(t)/dt
-```
-
-Controller gains were tuned experimentally to achieve stable and responsive performance.
-
----
-
-## 📊 Results
-
-The robot successfully followed the line under normal operating conditions.
-
-**Performance observations:**
-
-* Stable tracking with minimal oscillation
-* Responsive to changes in line curvature
-* Maximum speed: (add value)
-
-(Optional: include plots if available)
-![Performance Plot](docs/results.png)
-
----
-
-## ⚠️ Challenges
+## Challenges
 
 Some challenges encountered during development included:
 
@@ -178,7 +149,7 @@ These issues were addressed through filtering, iterative tuning, and hardware ad
 
 ---
 
-## 🔁 Future Improvements
+## Future Improvements
 
 * Implement more advanced control (e.g., adaptive or state-based control)
 * Improve sensor calibration
