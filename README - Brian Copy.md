@@ -16,9 +16,26 @@ The following videos document our three trial runs. For the competition, each te
 
 We are proud to say that our ROMI was not only one of the most consistent performers, but also the fastest in the entire competition. Whereas most teams took between 40 to 100 seconds to complete the course, our robot finished in 26.3 seconds. All three trials can be found on youtube and are linked below.
 
-[Trial 1: 26.9 seconds](https://youtu.be/BLMAuTk7GWE)
-[Trial 2: 26.3 seconds](https://youtu.be/7kmqAkYPIVk)
-[Trial 3: 26.6 seconds](https://youtu.be/af3TSzDRKpg)
+### Trial 1 (26.9 seconds)
+<p align="center">
+  <a href="https://youtu.be/BLMAuTk7GWE">
+    <img src="https://img.youtube.com/vi/BLMAuTk7GWE/0.jpg" width="400">
+  </a>
+</p>
+
+### Trial 2 (26.3 seconds)
+<p align="center">
+  <a href="https://youtu.be/7kmqAkYPIVk">
+    <img src="https://img.youtube.com/vi/7kmqAkYPIVk/0.jpg" width="400">
+  </a>
+</p>
+
+### Trial 3 (26.6 seconds)
+<p align="center">
+  <a href="https://youtu.be/af3TSzDRKpg">
+    <img src="https://img.youtube.com/vi/af3TSzDRKpg/0.jpg" width="400">
+  </a>
+</p>
 
 ## Hardware Design
 
