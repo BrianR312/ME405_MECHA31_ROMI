@@ -57,11 +57,15 @@ Using this modular task structure we have seven tasks that communicate with each
 
 ### Task Structure
 
-Our tasks are structured as generator functions so that they can keep internal state in between being called, which allows us to maintain proper multitasking. To plan out the structure of each task, we use finite state machines, one for each task. 
+Our tasks are structured as generator functions so that they can keep internal state in between being called, which allows us to maintain proper multitasking. To plan out the structure of each task, we use finite state machines, one for each task. The diagrams show bubbles as states, with arrows as transitions labelled with the transition criteria and any variable changes as a result of the transition.
+
+The motor tasks are identical, thus they are shown using the same finite state machine. The motor task includes eight states: Init, Wait, Run, Fllw, Estm, Turn, Turn Place, Straight. Init initializes the motors and moves to Wait where the task waits for the user to input a command. By choosing 'L' or 'R' the user activates a step response in the left or right motor respectively. By choosing 'F' the user activates the line following state, where Romi will follow a line indefinitely. By choosing 'E' Romi is set up to run exactly 1000 mm in a straight line controlled by the state estimator. Lastly, Turn, Turn Place and Straight are all results of the go command 'G' which starts Romi on the time trial track. The user interface task, 'task_user.py', controls the switching between the three aforementioned states based on the section of track.
+
+<img width="731" height="526" alt="image" src="https://github.com/user-attachments/assets/f250973d-4bd4-4f66-833f-536737505411" />
 
 ---
 
-## 🧮 Control System
+## Control System
 
 A feedback controller was implemented to minimize the error between the robot’s position and the line.
 
