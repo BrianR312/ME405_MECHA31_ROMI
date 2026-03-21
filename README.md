@@ -41,13 +41,13 @@ Custom mounts were used to position the sensors and motors appropriately.
 The software is modular and organized into the following components:
 
 * **Drivers:** Classes that include the methods for each object that will be used in higher levels
-*   **Ex:** 'encoder.py', 'motor_driver.py', 'observer.py'
+  -**Ex:** 'encoder.py', 'motor_driver.py', 'observer.py'
 * **Task Files:** Classes that represent each task that needs to run
-*   **Ex:** 'task_motor.py', 'task_observer.py'
+  -**Ex:** 'task_motor.py', 'task_observer.py'
 * **Libraries:** Files given to us by the instructor that set up inter-file communication and the scheduler
-*   **Ex:** 'task_share.py', 'cotask.py'
+  -**Ex:** 'task_share.py', 'cotask.py'
 * **Main:** The main file that initializes all the objects, shares, queues, and tasks
-*   **Ex:** 'main.py'
+  -**Ex:** 'main.py'
 
 The system operates using a structured control loop that continuously:
 
