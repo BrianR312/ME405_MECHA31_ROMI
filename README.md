@@ -63,6 +63,10 @@ The motor tasks are identical, thus they are shown using the same finite state m
 
 <img width="731" height="526" alt="image" src="https://github.com/user-attachments/assets/f250973d-4bd4-4f66-833f-536737505411" />
 
+The user task handles the user input and also recieves input from the state estimator to control Romi during the time trial. The task is broken down into 19 states, with state 0 being used for initialization and states 1-5 being used to handle and display user multicharacter inputs, recieved data from the line follower and step responses, and the wait state to allow for resets after certain commands. Lastly, states 6-18 all represent a section on the game track and control the different motor flags that dictate turning and moving straight. 
+
+<img width="3548" height="2443" alt="User Task FSM" src="https://github.com/user-attachments/assets/2d46f2d4-3e10-418c-9f2e-e34d81a6d3ed" />
+
 ---
 
 ## Control System
