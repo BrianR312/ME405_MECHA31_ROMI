@@ -171,13 +171,14 @@ Given more time for this project, we would make two changes to improve our line 
 
 ## Repository Structure
 ```
-your-project/
+ME405_MECHA31_ROMI/
 ├── source_code/    # Python source code
 ├── demo_vids/      # Videos of our trial runs and tests
 ├── images/         # Photos of the robot and racetrack
 └── README.md       # Project documentation
 ```
 
-## Additional Notes
+## Usage
 
-This project demonstrates the integration of sensing, control systems, and embedded programming to achieve autonomous behavior in a robotic platform.
+To use our code, download it to your microcontroller of choice. Micropython and Python are required. Changes to pin configuration and timer channel usage may be needed based on your unique setup. Once running, the file main.py will provide a user interface that will enable interaction with ROMI. Functions such as gathering step response data, following a line, testing the state estimator, and running our specific competion course are already in place and described in the printed help menu.
+
