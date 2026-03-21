@@ -143,12 +143,12 @@ Three representative cases were tested:
   The system response was slow with a time constant of 0.240 seconds. A small but noticeable steady state-error was present. This controller design was not aggressive enough for our needs.
 
 - **Kp = 500:**  
-  This gain produced the best overall performance. The system reached the setpoint quickly (τ = 0.20 seconds) with no overshoot and little to no steady-state error within our test time frame. The response was stable and aggressive enough for our needs
+  This gain produced the best overall performance. The system reached the setpoint quickly (τ = 0.20 seconds) with no overshoot and little to no steady-state error within our test time frame. The response was stable and aggressive enough for our use case.
 
 - **Kp = 2000:**  
-  At high gain, the system became overly aggressive. The response exhibited significant oscillations and instability due to overcorrection, indicating that the controller was too sensitive to error.
-
-Based on these results, a proportional gain of **Kp = 500** was selected as it provided the best balance between responsiveness and stability. This tuning process ensured reliable motor performance, which is critical for accurate line-following behavior.
+  At high gain, the system became overly aggressive and had the highest steady-state error of the three tests despite the added integral control. The overly aggressive nature of this design was especially evident in the first 0.2 seconds where the motor sharply jumps in RPM before a temporary fall. It then continues towards our setpoint, though this phase is much slower than our other controller designs. A response like this would not work for our needs as the spike seen in the beginning would likely induce slipping at our wheels. Not only does this lead to instability, but this would also cause missed encoder measurements.
+  
+Based on these results, a proportional gain of **Kp = 500** was selected as it provided the best balance between responsiveness and stability. Further tuning was performed with narrower ranges of Kp values, but a Kp of 500 was the final value we ended up using. 
 
 <p align="center">
   <img src="images/02_22_14_39_20_sp80_kp50.0.png" width="600">
