@@ -59,13 +59,17 @@ Using this modular task structure we have seven tasks that communicate with each
 
 Our tasks are structured as generator functions so that they can keep internal state in between being called, which allows us to maintain proper multitasking. To plan out the structure of each task, we use finite state machines, one for each task. The diagrams show bubbles as states, with arrows as transitions labelled with the transition criteria and any variable changes as a result of the transition.
 
+#### Motor Task
 The motor tasks are identical, thus they are shown using the same finite state machine. The motor task includes eight states: Init, Wait, Run, Fllw, Estm, Turn, Turn Place, Straight. Init initializes the motors and moves to Wait where the task waits for the user to input a command. By choosing 'L' or 'R' the user activates a step response in the left or right motor respectively. By choosing 'F' the user activates the line following state, where Romi will follow a line indefinitely. By choosing 'E' Romi is set up to run exactly 1000 mm in a straight line controlled by the state estimator. Lastly, Turn, Turn Place and Straight are all results of the go command 'G' which starts Romi on the time trial track. The user interface task, 'task_user.py', controls the switching between the three aforementioned states based on the section of track.
 
 <img width="731" height="526" alt="image" src="https://github.com/user-attachments/assets/f250973d-4bd4-4f66-833f-536737505411" />
 
+#### User Task
 The user task handles the user input and also recieves input from the state estimator to control Romi during the time trial. The task is broken down into 19 states, with state 0 being used for initialization and states 1-5 being used to handle and display user multicharacter inputs, recieved data from the line follower and step responses, and the wait state to allow for resets after certain commands. Lastly, states 6-18 all represent a section on the game track and control the different motor flags that dictate turning and moving straight. 
 
 <img width="3548" height="2443" alt="User Task FSM" src="https://github.com/user-attachments/assets/2d46f2d4-3e10-418c-9f2e-e34d81a6d3ed" />
+
+#### Line Follower and Observer Tasks
 
 ---
 
