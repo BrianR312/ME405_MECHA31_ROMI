@@ -16,21 +16,21 @@ The following videos document our three trial runs. For the competition, each te
 
 We are proud to say that our ROMI was not only one of the most consistent performers, but also the fastest in the entire competition. Whereas most teams took between 40 to 100 seconds to complete the course, our robot finished in 26.3 seconds. All three trials can be found on youtube and are linked below.
 
-### Trial 1 (26.9 seconds)
+#### Trial 1 (26.9 seconds)
 <p align="center">
   <a href="https://youtu.be/BLMAuTk7GWE">
     <img src="https://img.youtube.com/vi/BLMAuTk7GWE/0.jpg" width="400">
   </a>
 </p>
 
-### Trial 2 (26.3 seconds)
+#### Trial 2 (26.3 seconds)
 <p align="center">
   <a href="https://youtu.be/7kmqAkYPIVk">
     <img src="https://img.youtube.com/vi/7kmqAkYPIVk/0.jpg" width="400">
   </a>
 </p>
 
-### Trial 3 (26.6 seconds)
+#### Trial 3 (26.6 seconds)
 <p align="center">
   <a href="https://youtu.be/af3TSzDRKpg">
     <img src="https://img.youtube.com/vi/af3TSzDRKpg/0.jpg" width="400">
@@ -45,7 +45,7 @@ This section will discuss our choice of components, mounting system, and wiring.
 
 #### Shoe of Brian and NUCLEO board
 
-The Shoe of Brian is a custom IO shield that was designed by Professor Ridgeley and attaches to our STM32 NUCLEO board. This board comes equipped with an STM32 microcontroller. 
+The Shoe of Brian is a custom I/O shield designed by Professor Ridgely that interfaces directly with the STM32 NUCLEO development board. The NUCLEO board houses the STM32 microcontroller, which is responsible for executing control algorithms, reading sensor data, and generating actuator commands.
 
 #### QTR-MD-05A Reflectance Sensor Array:
 
@@ -59,13 +59,11 @@ For reading displacement, these motor drivers also came with magnetic quadrature
 
 #### Polulu Bump Sensor
 
+Bump sensors are used for collision detection and provide a simple digital input indicating physical contact with obstacles.
+
 #### BNO055 IMU
 
-
-
-
-
-* Reflectance sensor array (QTR)
+The BNO055 is a 9 degree of freedom IMU that combines an accelerometer, gyroscope, and magnotometer. It comes with its own MCU for sensor fusion, Euler angle processing, and calibration. This component, in addition to our encoders, was critical for developing our state observer. Special care had to be taken when finding the calibration coeffecients in order to ensure our IMU was properly calibrated.  
 
 ### Mechanical Design and Mounting
 
