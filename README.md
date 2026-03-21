@@ -70,6 +70,9 @@ The user task handles the user input and also recieves input from the state esti
 <img width="3548" height="2443" alt="User Task FSM" src="https://github.com/user-attachments/assets/2d46f2d4-3e10-418c-9f2e-e34d81a6d3ed" />
 
 #### Line Follower and Observer Tasks
+Both the line follower and observer tasks are structured in the same way, with only an initialization state and an idle state. The line follower runs every time it is called because the motor task only reads the values recieved by the line follower if a line following related command is called. Towards the end of the term we considered that the line follower always running may be eating time and causing tasks to run out of schedule, so we made it so that the line follow task passes if the followFlag is not high. Furthermore, the observer task needs to run always in order to maintain proper state estimation, so it is constantly taking readings.
+
+<img width="1148" height="416" alt="image" src="https://github.com/user-attachments/assets/ae932a77-c1dd-43b9-9c30-ad86a2a86125" />
 
 ---
 
