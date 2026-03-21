@@ -1,5 +1,10 @@
 # ME405_MECHA31_ROMI
 
+## Contributors
+
+* Brian Ribbe
+* Ben Backlin
+
 ## Overview and Competition Description
 
 This project implements an autonomous robot, named ROMI, optimized to complete a competition racetrack in as little time as possible. For navigation, our ROMI was equipped with a line follower to track its position relative to a fixed line on the racetrack, a state observer to estimate its position and orientation, and a set of bump sensors for tactile feedback when making contact with obstacles. The software and hardware implementation of these features will be discussed within the following sections. 
@@ -193,10 +198,6 @@ These issues were addressed through filtering, iterative tuning, and hardware ad
 
 ---
 
-## 👥 Contributors
-
-* Your Name
-* Teammate Name
 
 ---
 
