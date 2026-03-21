@@ -177,7 +177,7 @@ These issues were addressed through filtering, iterative tuning, and hardware ad
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```
 .
@@ -189,18 +189,7 @@ These issues were addressed through filtering, iterative tuning, and hardware ad
 └── README.md   # Project documentation
 ```
 
----
 
-## 📸 Project Photos
-
-![Robot](images/robot.jpg)
-![Setup](images/setup.jpg)
-
----
-
-
----
-
-## 📎 Additional Notes
+## Additional Notes
 
 This project demonstrates the integration of sensing, control systems, and embedded programming to achieve autonomous behavior in a robotic platform.
