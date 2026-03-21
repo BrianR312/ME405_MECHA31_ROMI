@@ -36,29 +36,28 @@ Custom mounts were used to position the sensors and motors appropriately.
 
 ---
 
-## 💻 Software Design
+##  Software Design
 
 The software is modular and organized into the following components:
 
-Drivers: Classes that include the methods for each object that will be used in higher levels
-    - Ex: 'encoder.py', 'motor_driver.py', 'observer.py'
-Task Files: Classes that represent each task that needs to run
-    - Ex: 'task_motor.py', 'task_observer.py'
-Libraries: Files given to us by the instructor that set up inter-file communication and the scheduler
-    - Ex: 'task_share.py', 'cotask.py'
-Main: The main file that initializes all the objects, shares, queues, and tasks
-    - Ex: 'main.py'
+* **Drivers:** Classes that include the methods for each object that will be used in higher levels
+  - **Ex:** 'encoder.py', 'motor_driver.py', 'observer.py'
+* **Task Files:** Classes that represent each task that needs to run
+  - **Ex:** 'task_motor.py', 'task_observer.py'
+* **Libraries:** Files given to us by the instructor that set up inter-file communication and the scheduler
+  - **Ex:** 'task_share.py', 'cotask.py'
+* **Main:** The main file that initializes all the objects, shares, queues, and tasks
+  - **Ex:** 'main.py'
 
-The system operates using a structured control loop that continuously:
+### Task Diagram
 
+Using this modular task structure we have seven tasks that communicate with each other using the shares and queues system. We use a task diagram to organize the scheduling and inter task communication between the tasks to ensure proper multitasking.
 
-I AM ADDING THIS WE NEED TO DELETE IT
+<img width="3604" height="3043" alt="Task Diagram (2)" src="https://github.com/user-attachments/assets/1dbd5106-60fb-4034-a85f-20ebcdd3cbee" />
 
+### Task Structure
 
-1. Reads sensor input
-2. Computes error
-3. Updates control output
-4. Commands motors
+Our tasks are structured as generator functions so that they can keep internal state in between being called, which allows us to maintain proper multitasking. To plan out the structure of each task, we use finite state machines, one for each task. 
 
 ---
 
