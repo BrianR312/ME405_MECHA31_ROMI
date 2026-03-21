@@ -53,11 +53,11 @@ The software is modular and organized into the following components:
 
 Using this modular task structure we have seven tasks that communicate with each other using the shares and queues system. We use a task diagram to organize the scheduling and inter task communication between the tasks to ensure proper multitasking.
 
-<img width="3604" height="3043" alt="Task Diagram (1)" src="https://github.com/user-attachments/assets/103c3f2c-719c-45ee-99ee-ffc8bb9d81a6" />
+<img width="3604" height="3043" alt="Task Diagram (2)" src="https://github.com/user-attachments/assets/1dbd5106-60fb-4034-a85f-20ebcdd3cbee" />
 
 ### Task Structure
 
-Our tasks are structured as generator functions that en
+Our tasks are structured as generator functions so that they can keep internal state in between being called, which allows us to maintain proper multitasking. To plan out the structure of each task, we use finite state machines, one for each task. 
 
 ---
 
