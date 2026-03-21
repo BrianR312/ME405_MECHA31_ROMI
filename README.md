@@ -171,12 +171,14 @@ Given more time for this project, we would make two changes to improve our line 
 
 ## Repository Structure
 
+---
 
 ├── source_code/        # Python source code
-├── demo_vids/          # Wiring diagrams and CAD files
-├── images/             # Photos of the robot
+├── demo_vids/          # Videos of our trial runs and other tests
+├── images/             # Photos of ROMI and the racetrack
 └── README.md           # Project documentation
 
+---
 
 ## Additional Notes
 
