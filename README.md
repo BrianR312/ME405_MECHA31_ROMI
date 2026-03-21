@@ -58,6 +58,8 @@ The Shoe of Brian is a custom I/O shield designed by Professor Ridgely that inte
 
 For our line follower, a Polulu analog 5 sensor array was used. This sensor package uses IR LED/phototransistor pairs to illuminate the ground and detect reflectance. Originally, we used a QTR-HD-05A sensor array where the HD stands for high density. With only 5 sensors, we quickly found the high density package to be too narrow in focus for the track's line width. By changing to a medium density (MD) sensor with the same number of IR emitters, we were able to keep the same wiring and pin configurations while expanding our maximum sensable width by over 75%. This came at the expense of some fidelity between sensors, but this had a negligible effect on our line following.
 
+![Line Follower and Bump Sensors](images/Line_and_bump_sensors.jpeg)
+
 #### TI DRV8838 Motor Drivers and Encoders:
 
 Our ROMI chassis came equipped with two TI DRV8838 motor drivers. At no-load conditions, these motor drivers had a speed of 150 RPM at a nominal voltage of 4.5V. They also had a gear ratio of 120:1.
@@ -70,11 +72,13 @@ Bump sensors are used for collision detection and provide a simple digital input
 
 #### BNO055 IMU
 
-The BNO055 is a 9 degree of freedom IMU that combines an accelerometer, gyroscope, and magnotometer. It comes with its own MCU for sensor fusion, Euler angle processing, and calibration. This component, in addition to our encoders, was critical for developing our state observer. Special care had to be taken when finding the calibration coeffecients in order to ensure our IMU was properly calibrated.  
+The BNO055 is a 9 degree of freedom IMU that combines an accelerometer, gyroscope, and magnotometer. It comes with its own MCU for sensor fusion, Euler angle processing, and calibration. This component, in addition to our encoders, was critical for developing our state observer. Special care had to be taken when finding the calibration coeffecients in order to ensure our IMU was properly calibrated. Additionally, we had to ensure the IMU was properly mounted so that any vibration due to the ROMI's motion had negligible effect on our output Euler angles.
 
 ### Mechanical Design and Mounting
 
-All components were mounted using the provided M2 screws and matching hex nuts. For our IMU, two standoffs were used to ensure the IMU was parallel to the ground. We used another two standoffs for our refelctance line sensor. This enabled it to get closer to the ground for more precise readings. All standoffs were mounted using M2 screws.
+All components were mounted using the provided M2 screws and matching hex nuts. For our IMU, two standoffs were used to ensure the IMU was parallel to the ground. We used another two standoffs for our refelctance line sensor. This enabled it to get closer to the ground for more precise readings. All standoffs were mounted using M2 screws. An image of our IMU mounting can be seen below.
+
+![IMU Mounting](images/IMU.jpeg)
 
 ### Wiring Diagram
 
