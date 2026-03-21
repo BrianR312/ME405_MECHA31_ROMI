@@ -162,40 +162,20 @@ Based on these results, a proportional gain of **Kp = 500** was selected as it p
   <img src="images/02_22_14_39_30_sp80_kp2000.0.png" width="600">
 </p>
 
-## Unique Features
 
 ## Challenges
 
-Some challenges encountered during development included:
+The biggest challenge we faced throughout this project was our line follower functionality. As mentioned before, we started with a 5 sensor, high-density array that was too narrow for our line. At high speeds, our line follower task would not update quick enough for the sensor array to detect changes in line position. Upgrading to a medium density sensor helped alleviate some of these issues. However, even with this wider sensor, our team had to run the "slalom" portion of the track at lower speeds compared to other groups. This was our biggest disadvantage.
 
-* Sensor noise and inconsistent readings
-* Tuning control gains for stability
-* Mechanical alignment of sensors
-
-These issues were addressed through filtering, iterative tuning, and hardware adjustments.
-
----
-
-## Future Improvements
-
-* Implement more advanced control (e.g., adaptive or state-based control)
-* Improve sensor calibration
-* Increase speed while maintaining stability
-* Enhance mechanical robustness
-
----
+Given more time for this project, we would make two changes to improve our line following capability. The first, and easiest, would be to upgrade to a sensor array with more sensors. This would give us a wider field of view that would help compensate for our line follower task's update speed. The second change would be updating our software architecture. Currently, we have a task for each sensing function - crash detection with the bump sensor, line following, state observation, etc. Each of these tasks runs for every iteration of the scheduler, even when not needed. We could combine less important sensing tasks, thus reducing the number of tasks that need to run. Doing so would allow us to reduce the periods on all of our tasks, including our line follower task. This would imporve line detection and enable us to run our ROMI at faster speeds when line following.
 
 ## Repository Structure
 
-```
-.
-├── src/        # Python source code
-├── hardware/   # Wiring diagrams and CAD files
-├── images/     # Photos of the robot
-├── docs/       # Diagrams and additional documentation
-├── main.py     # Main execution file
-└── README.md   # Project documentation
-```
+
+├── source_code/        # Python source code
+├── demo_vids/          # Wiring diagrams and CAD files
+├── images/             # Photos of the robot
+└── README.md           # Project documentation
 
 
 ## Additional Notes
