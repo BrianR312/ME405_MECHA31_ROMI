@@ -14,9 +14,10 @@ The rules of the competition were kept relatively simple with the provided racet
 
 The following videos document our three trial runs. For the competition, each team was allowed three attempts to finish. Completing the course three times demonstrated consistency and resulted in higher scoring. The best time of the three attempts was used for the final score. 
 
-We are proud to say that our ROMI was not only one of the most consistent performers, but also the fastest in the entire competition. Whereas most teams took between 40 to 100 seconds to complete the course, our robot finished in 26.3 seconds. 
+We are proud to say that our ROMI was not only one of the most consistent performers, but also the fastest in the entire competition. Whereas most teams took between 40 to 100 seconds to complete the course, our robot finished in 26.3 seconds. All three trials can be found below.
 
-[Trial 1](PASTE_VIDEO_LINK_HERE)
+Trial 2: 26.3 seconds
+[Trial 2](https://youtu.be/7kmqAkYPIVk)
 
 ## Hardware Design
 
@@ -29,9 +30,9 @@ This section will discuss our choice of components, mounting system, and wiring.
 * Motor driver
 * Microcontroller (e.g., STM32 / Pyboard)
 
-### Mechanical Design
+### Mechanical Design and Mounting
 
-Custom mounts were used to position the sensors and motors appropriately.
+All components were mounted using the provided M2 screws and matching hex nuts. For our IMU, two standoffs were used to ensure the IMU was parallel to the ground. We used another two standoffs for our refelctance line sensor. This enabled it to get closer to the ground for more precise readings. All standoffs were mounted using M2 screws.
 
 ### Wiring Diagram
 
