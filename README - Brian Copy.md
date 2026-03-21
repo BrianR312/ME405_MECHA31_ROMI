@@ -14,11 +14,13 @@ The rules of the competition were kept relatively simple with the provided racet
 
 The following videos document our three trial runs. For the competition, each team was allowed three attempts to finish. Completing the course three times demonstrated consistency and resulted in higher scoring. The best time of the three attempts was used for the final score. 
 
-We are proud to say that our ROMI was not only one of the most consistent performers, but also the fastest in the entire competition. Whereas most teams took between 40 to 100 seconds to complete the course, our robot finished in 26.3 seconds.
+We are proud to say that our ROMI was not only one of the most consistent performers, but also the fastest in the entire competition. Whereas most teams took between 40 to 100 seconds to complete the course, our robot finished in 26.3 seconds. 
 
 [Trial 1](PASTE_VIDEO_LINK_HERE)
 
 ## Hardware Design
+
+This section will discuss our choice of components, mounting system, and wiring. No custom hardware was manufactured for this project.
 
 ### Components
 
