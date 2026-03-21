@@ -135,16 +135,31 @@ Both the line follower and observer tasks are structured in the same way, with o
 
 ## Motor Tuning and Parameterization
 
+To tune the motor controller, a series of step response tests using Proportional-Integral Control (PI) were conducted with  a target setpoint of 80 RPM. The proportional gain (Kp) was varied while observing the resulting motor speed response using encoder feedback. Time constant, τ, and steady-state error were calculated in order to quantitatively compare responses. For each test, a KI value of 1500 was used.
+
+Three representative cases were tested:
+
+- **Kp = 50:**  
+  The system response was slow with a time constant of 0.240 seconds. A small but noticeable steady state-error was present. This controller design was not aggressive enough for our needs.
+
+- **Kp = 500:**  
+  This gain produced the best overall performance. The system reached the setpoint quickly (τ = 0.20 seconds) with no overshoot and little to no steady-state error within our test time frame. The response was stable and aggressive enough for our needs
+
+- **Kp = 2000:**  
+  At high gain, the system became overly aggressive. The response exhibited significant oscillations and instability due to overcorrection, indicating that the controller was too sensitive to error.
+
+Based on these results, a proportional gain of **Kp = 500** was selected as it provided the best balance between responsiveness and stability. This tuning process ensured reliable motor performance, which is critical for accurate line-following behavior.
+
 <p align="center">
-  <img src="images/02_22_14_39_20_sp80_kp50.0.png" width="400">
+  <img src="images/02_22_14_39_20_sp80_kp50.0.png" width="600">
 </p>
 
 <p align="center">
-  <img src="images/02_22_14_39_25_sp80_kp500.0.png" width="400">
+  <img src="images/02_22_14_39_25_sp80_kp500.0.png" width="600">
 </p>
 
 <p align="center">
-  <img src="images/02_22_14_39_30_sp80_kp2000.0.png" width="400">
+  <img src="images/02_22_14_39_30_sp80_kp2000.0.png" width="600">
 </p>
 
 ## Unique Features
